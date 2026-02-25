@@ -72,9 +72,9 @@ form.addEventListener("submit", async (e) => {
             resultView.classList.remove("hidden");
 
             const isDisease = prediction === 1;
-            const color = isDisease ? "#fb7185" : "#34d399";
+            const color = isDisease ? "#34d399" : "#fb7185";  
 
-            predictionText.innerText = isDisease ? "Disease Detected" : "No Disease";
+            predictionText.innerText = isDisease ? "No Detected" : "Disease Detected";
             confValue.innerText = confidence.toFixed(2);
 
             predictionText.classList.remove("success-glow", "danger-glow");
