@@ -5,159 +5,436 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HeartSync | Secure Clinical Portal</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="app-shell">
-    <aside class="sidebar">
-        <div class="brand">
-            <h2>HeartSync</h2>
+
+  <!-- ========= SIDEBAR ========= -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">HeartSync</span>
+        <span class="brand-tagline">Clinical AI Platform</span>
+      </div>
+    </div>
+
+    <div class="nav-section-label">WORKSPACE</div>
+    <nav class="nav-menu">
+      <div class="nav-item active">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        <span>Dashboard</span>
+      </div>
+      <div class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>Privacy Protocol</span>
+      </div>
+      <div class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        <span>Logs</span>
+      </div>
+      <div class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <span>Patients</span>
+      </div>
+      <div class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"/>
+          <line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        <span>Analytics</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="mpc-node-card">
+        <div class="node-pulse-ring">
+          <div class="node-pulse-core"></div>
         </div>
-        <nav class="nav-menu">
-            <div class="nav-item active">Dashboard</div>
-            <div class="nav-item">Privacy Protocol</div>
-            <div class="nav-item">Logs</div>
-        </nav>
-        <div class="status-footer">
-            <p>MPC Node: Active</p>
-            <small>Secure Encryption Enabled</small>
+        <div class="node-info">
+          <span class="node-label">MPC NODE</span>
+          <span class="node-value">Active · Node_#01</span>
         </div>
-    </aside>
+      </div>
+      <div class="enc-status">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+        </svg>
+        E2E Encryption Active
+      </div>
+    </div>
+  </aside>
 
-    <main class="main-content">
-        <header class="content-header">
-            <h1>Patient Risk Analysis</h1>
-            <p>Secure Multi-Party Computation Terminal <span class="node-id">Node_#01</span></p>
-        </header>
+  <!-- ========= MAIN ========= -->
+  <main class="main-content">
 
-        <div class="dashboard-grid">
-            <section class="glass-card">
-                <form id="predictionForm">
-                    <div class="input-grid">
-
-                        <div class="input-field">
-                            <label>Age</label>
-                            <input type="number" id="age" min="1" max="120" value="30">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Gender</label>
-                            <select id="sex">
-                                <option value="0">Female</option>
-                                <option value="1">Male</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Chest Pain Type</label>
-                            <select id="cp">
-                                <option value="0">Typical Angina</option>
-                                <option value="1">Atypical Angina</option>
-                                <option value="2">Non-Anginal Pain</option>
-                                <option value="3">Asymptomatic</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Resting BP</label>
-                            <input type="number" id="trestbps" min="80" max="200" value="110">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Cholesterol</label>
-                            <input type="number" id="chol" min="100" max="400" value="175">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Fasting Blood Sugar</label>
-                            <select id="fbs">
-                                <option value="0">≤ 120 mg/dl</option>
-                                <option value="1">&gt; 120 mg/dl</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Rest ECG</label>
-                            <select id="restecg">
-                                <option value="0">Normal</option>
-                                <option value="1">ST-T abnormality</option>
-                                <option value="2">Left ventricular hypertrophy</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Max Heart Rate</label>
-                            <input type="number" id="thalach" min="60" max="220" value="180">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Exercise Induced Angina</label>
-                            <select id="exang">
-                                <option value="0">No</option>
-                                <option value="1">Yes</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Oldpeak</label>
-                            <input type="number" id="oldpeak" min="0" max="6" step="0.1" value="0">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Slope</label>
-                            <select id="slope">
-                                <option value="1">Upsloping</option>
-                                <option value="2">Flat</option>
-                                <option value="3">Downsloping</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Number of Vessels</label>
-                            <select id="ca">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Thal</label>
-                            <select id="thal">
-                                <option value="1">Normal</option>
-                                <option value="2">Fixed Defect</option>
-                                <option value="3">Reversible Defect</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-footer">
-                        <button type="submit" class="btn-main">Compute Secure Risk</button>
-                        <button type="button" onclick="fillHealthyData()" class="btn-sub">Fill Healthy Data</button>
-                        <button type="button" onclick="resetForm()" class="btn-sub">Reset</button>
-                    </div>
-                </form>
-            </section>
-
-            <section class="glass-card result-container">
-                <div id="idleView" class="view"><h4>Ready for Analysis</h4></div>
-
-                <div id="loadingView" class="view hidden">
-                    <div class="spinner"></div>
-                    <p>Encrypting & Processing...</p>
-                </div>
-
-                <div id="resultView" class="view hidden">
-                    <h2 id="predictionText">--</h2>
-                    <small>Risk Probability</small>
-                    <div class="meter"><div id="meterFill"></div></div>
-                    <p>Confidence: <span id="confValue">0</span>%</p>
-                    <p id="riskAdvice"></p>
-                </div>
-            </section>
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="page-breadcrumb">
+          <span>Dashboard</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="bc-current">Patient Risk Analysis</span>
         </div>
-    </main>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-badge">
+          <span class="tb-dot"></span>
+          Secure MPC Terminal · Node_#01
+        </div>
+        <div class="topbar-time" id="liveTime"></div>
+        <div class="avatar-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Dr. Admin
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats row -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-icon blue">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-num">1,284</div>
+          <div class="stat-label">Total Patients</div>
+        </div>
+        <div class="stat-trend up">+4.2%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon red">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-num">342</div>
+          <div class="stat-label">High Risk</div>
+        </div>
+        <div class="stat-trend down">+1.8%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-num">98.7%</div>
+          <div class="stat-label">Model Accuracy</div>
+        </div>
+        <div class="stat-trend up">+0.3%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon amber">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-num">2.4s</div>
+          <div class="stat-label">Avg. Analysis Time</div>
+        </div>
+        <div class="stat-trend up">-0.2s</div>
+      </div>
+    </div>
+
+    <!-- Main grid -->
+    <div class="dashboard-grid">
+
+      <!-- Form card -->
+      <section class="panel form-panel">
+        <div class="panel-header">
+          <div class="panel-title-block">
+            <h2 class="panel-title">Patient Risk Analysis</h2>
+            <p class="panel-subtitle">Enter patient vitals and clinical markers to compute cardiovascular risk</p>
+          </div>
+          <div class="panel-header-actions">
+            <button type="button" onclick="fillHealthyData()" class="btn-ghost">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Sample Data
+            </button>
+            <button type="button" onclick="resetForm()" class="btn-ghost">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.91"/></svg>
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <form id="predictionForm">
+
+          <!-- Demographics -->
+          <div class="form-section">
+            <div class="form-section-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Patient Demographics
+            </div>
+            <div class="input-grid cols-3">
+              <div class="input-field">
+                <label for="age">Age <span class="unit">yrs</span></label>
+                <input type="number" id="age" min="1" max="120" value="30">
+              </div>
+              <div class="input-field">
+                <label for="sex">Biological Sex</label>
+                <select id="sex">
+                  <option value="0">Female</option>
+                  <option value="1">Male</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <label for="cp">Chest Pain Type</label>
+                <select id="cp">
+                  <option value="0">Typical Angina</option>
+                  <option value="1">Atypical Angina</option>
+                  <option value="2">Non-Anginal Pain</option>
+                  <option value="3">Asymptomatic</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vitals -->
+          <div class="form-section">
+            <div class="form-section-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Clinical Vitals
+            </div>
+            <div class="input-grid cols-3">
+              <div class="input-field">
+                <label for="trestbps">Resting BP <span class="unit">mmHg</span></label>
+                <input type="number" id="trestbps" min="80" max="200" value="110">
+              </div>
+              <div class="input-field">
+                <label for="chol">Cholesterol <span class="unit">mg/dl</span></label>
+                <input type="number" id="chol" min="100" max="400" value="175">
+              </div>
+              <div class="input-field">
+                <label for="fbs">Fasting Blood Sugar</label>
+                <select id="fbs">
+                  <option value="0">≤ 120 mg/dl</option>
+                  <option value="1">&gt; 120 mg/dl</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <label for="thalach">Max Heart Rate <span class="unit">bpm</span></label>
+                <input type="number" id="thalach" min="60" max="220" value="180">
+              </div>
+              <div class="input-field">
+                <label for="oldpeak">Oldpeak <span class="unit">ST</span></label>
+                <input type="number" id="oldpeak" min="0" max="6" step="0.1" value="0">
+              </div>
+              <div class="input-field">
+                <label for="restecg">Resting ECG</label>
+                <select id="restecg">
+                  <option value="0">Normal</option>
+                  <option value="1">ST-T Abnormality</option>
+                  <option value="2">LV Hypertrophy</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cardiac -->
+          <div class="form-section">
+            <div class="form-section-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Cardiac Assessment
+            </div>
+            <div class="input-grid cols-4">
+              <div class="input-field">
+                <label for="exang">Exercise-Induced Angina</label>
+                <select id="exang">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <label for="slope">ST Slope</label>
+                <select id="slope">
+                  <option value="1">Upsloping</option>
+                  <option value="2">Flat</option>
+                  <option value="3">Downsloping</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <label for="ca">Major Vessels</label>
+                <select id="ca">
+                  <option value="0">0 vessels</option>
+                  <option value="1">1 vessel</option>
+                  <option value="2">2 vessels</option>
+                  <option value="3">3 vessels</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <label for="thal">Thalassemia</label>
+                <select id="thal">
+                  <option value="1">Normal</option>
+                  <option value="2">Fixed Defect</option>
+                  <option value="3">Reversible Defect</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="form-footer">
+            <div class="privacy-note">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Data processed via Secure Multi-Party Computation — never stored in plaintext
+            </div>
+            <button type="submit" class="btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Compute Secure Risk
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Result panel -->
+      <aside class="panel result-panel">
+        <div class="panel-header">
+          <div class="panel-title-block">
+            <h2 class="panel-title">Analysis Result</h2>
+            <p class="panel-subtitle">MPC-encrypted risk computation output</p>
+          </div>
+        </div>
+
+        <!-- Idle state -->
+        <div id="idleView" class="result-view">
+          <div class="idle-illustration">
+            <div class="pulse-rings">
+              <div class="pr pr1"></div>
+              <div class="pr pr2"></div>
+              <div class="pr pr3"></div>
+            </div>
+            <div class="idle-heart-icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="idle-title">Ready for Analysis</h3>
+          <p class="idle-sub">Complete patient data and click<br><strong>Compute Secure Risk</strong> to begin</p>
+          <div class="idle-chips">
+            <span class="chip">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Fully Encrypted
+            </span>
+            <span class="chip">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              HIPAA Compliant
+            </span>
+            <span class="chip">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Real-time Scoring
+            </span>
+          </div>
+        </div>
+
+        <!-- Loading state -->
+        <div id="loadingView" class="result-view hidden">
+          <div class="loading-wrap">
+            <div class="loader-ring">
+              <svg viewBox="0 0 80 80" width="80" height="80">
+                <circle class="loader-track" cx="40" cy="40" r="32"/>
+                <circle class="loader-fill" cx="40" cy="40" r="32"/>
+              </svg>
+              <div class="loader-inner-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+            </div>
+            <p class="loading-title">Analyzing Patient Data</p>
+            <div class="loading-steps">
+              <div class="lstep" id="lstep1"><span class="lstep-dot"></span>Encrypting data shares…</div>
+              <div class="lstep" id="lstep2"><span class="lstep-dot"></span>Running MPC protocol…</div>
+              <div class="lstep" id="lstep3"><span class="lstep-dot"></span>Decrypting result…</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result state -->
+        <div id="resultView" class="result-view hidden">
+          <div class="result-badge-wrap">
+            <div id="resultBadge" class="result-badge">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+          </div>
+
+          <div id="predictionText" class="prediction-label">--</div>
+
+          <div class="confidence-block">
+            <div class="conf-header">
+              <span class="conf-label">Confidence Score</span>
+              <span class="conf-pct"><span id="confValue">0</span>%</span>
+            </div>
+            <div class="progress-track">
+              <div id="meterFill" class="progress-bar"></div>
+            </div>
+          </div>
+
+          <div class="risk-breakdown">
+            <div class="rb-title">Risk Factor Breakdown</div>
+            <div class="rb-row">
+              <span class="rb-label">Age Factor</span>
+              <div class="rb-track"><div class="rb-fill" id="rfAge"></div></div>
+              <span class="rb-pct" id="rfAgePct">—</span>
+            </div>
+            <div class="rb-row">
+              <span class="rb-label">Cardiac Markers</span>
+              <div class="rb-track"><div class="rb-fill" id="rfCardiac"></div></div>
+              <span class="rb-pct" id="rfCardiacPct">—</span>
+            </div>
+            <div class="rb-row">
+              <span class="rb-label">Lifestyle Risk</span>
+              <div class="rb-track"><div class="rb-fill" id="rfLifestyle"></div></div>
+              <span class="rb-pct" id="rfLifestylePct">—</span>
+            </div>
+          </div>
+
+          <div id="riskAdvice" class="risk-advice"></div>
+
+          <button class="btn-outline-full" onclick="resetForm()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.91"/></svg>
+            New Analysis
+          </button>
+        </div>
+
+      </aside>
+    </div>
+  </main>
 </div>
 
 <script src="script.js"></script>
